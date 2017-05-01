@@ -19,6 +19,10 @@ public class InspectionList {
         numberOfInspections = inspections.length;
     }
 
+    public void setInspections(Inspection[] inspections) {
+        this.inspections = inspections;
+    }
+
     /**
      *
      * @return true if there exists another inspection on the list, false otherwise.

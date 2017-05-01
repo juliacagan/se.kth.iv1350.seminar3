@@ -5,12 +5,12 @@ import java.util.*;
  * Created by User on 2017-05-01.
  */
 public class CreditCardDTO {
-    String cardHolder;
-    String cardNumber;
-    int cvc;
-    Date expirationDate;
+    private String cardHolder;
+    private String cardNumber;
+    private String cvc;
+    private Date expirationDate;
 
-    public CreditCardDTO(String cardHolder, String cardNumber, int cvc, Date expirationDate) {
+    public CreditCardDTO(String cardHolder, String cardNumber, String cvc, Date expirationDate) {
         this.cardHolder = cardHolder;
         this.cardNumber = cardNumber;
         this.cvc = cvc;
@@ -25,7 +25,7 @@ public class CreditCardDTO {
         return cardNumber;
     }
 
-    public int getCvc() {
+    public String getCvc() {
         return cvc;
     }
 

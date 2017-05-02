@@ -14,6 +14,19 @@ public class InspectionHandler {
         this.dbhandler = dbhandler;
     }
 
+    public int calculateCost(){
+        int totalCost = 0;
+        inspectionList.resetCurrentIndex();
+        while(inspectionList.hasNext()){
+            totalCost += inspectionList.getNextInspection().getCost();
+        }
+        return totalCost;
+    }
+
+    public void saveInspectionResult (Inspection inspection){
+        dbhandler.saveInspectionResult(inspection);
+    }
+
     public void setInspectionList(Inspection[] inspections){
         this.inspectionList.setInspections(inspections);
     }

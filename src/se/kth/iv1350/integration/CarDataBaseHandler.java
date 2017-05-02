@@ -15,6 +15,7 @@ public class CarDataBaseHandler {
      * instructions.
      */
     public CarDataBaseHandler() {
+        VehicleDTO vehicle = new VehicleDTO("dummyVehicle");
         dataBaseInspections = new Inspection[] {
                 new Inspection(30, "Brakes", vehicle),
                 new Inspection(50, "Lights", vehicle),
@@ -27,7 +28,8 @@ public class CarDataBaseHandler {
      * @return An array of inspections for the specified vehicle.
      */
     public Inspection[] getInspectionByVehicle(VehicleDTO vehicle){
-
+        //Dummy implementation
+        return dataBaseInspections;
     }
 
     /**

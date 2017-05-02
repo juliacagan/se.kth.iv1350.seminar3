@@ -24,11 +24,18 @@ public class InspectionList {
     }
 
     /**
+     * Resets the <code>currentIndex</code> to zero.
+     */
+    public void resetCurrentIndex(){
+        this.currentIndex = 0;
+    }
+
+    /**
      *
      * @return true if there exists another inspection on the list, false otherwise.
      */
     public boolean hasNext(){
-        return currentIndex < numberOfInspections - 1;
+        return currentIndex < numberOfInspections;
     }
 
     /**

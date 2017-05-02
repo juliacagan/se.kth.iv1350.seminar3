@@ -23,7 +23,7 @@ public class Inspection {
         this.vehicle = vehicle;
     }
 
-   /* @Override
+   @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Inspection))
             return false;
@@ -31,7 +31,7 @@ public class Inspection {
         if (otherInspection.getCost() == this.cost && otherInspection.getDescription() == this.description)
             return true;
         return false;
-    } */
+    }
 
     public boolean isPassed() {
         return passed;

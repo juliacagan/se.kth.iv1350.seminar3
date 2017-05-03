@@ -67,8 +67,4 @@ public class Payment {
     public Date getDateOfTransaction() {
         return dateOfTransaction;
     }
-
-    public double getChange() {
-        return change;
-    }
 }

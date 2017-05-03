@@ -55,16 +55,18 @@ public class Controller {
 
     public double makeCashPayment(double cost, double amountPaid){
         Payment payment = new Payment(cost, amountPaid);
-        double change = payment.getChange();
+        double change = payment.makeCashPayment();
         return change;
 
     }
 
-    public void nextInspection(){
-
+    public Inspection nextInspection(){
+        return inspectionHandler.getNextInspection();
+        //TODO null handling exception
     }
 
-    public void enterInspectionResults(){
+    public void enterInspectionResults(Inspection inspection){
+        inspectionHandler.saveInspectionResult(inspection);
 
     }
 

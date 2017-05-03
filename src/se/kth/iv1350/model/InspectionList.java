@@ -43,6 +43,12 @@ public class InspectionList {
      * @return the next inspection.
      */
     public Inspection getNextInspection() {
-        return inspections[currentIndex++];
+        try{
+            return inspections[currentIndex++];
+        } catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
+
     }
 }

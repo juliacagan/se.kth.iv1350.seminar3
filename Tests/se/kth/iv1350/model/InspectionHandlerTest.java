@@ -73,14 +73,31 @@ public class InspectionHandlerTest {
     }
 
     @Test
-    public void testHasNext() throws Exception {
-        boolean result = inspectionList.hasNext();
+    public void hasNext() throws Exception {
+        boolean result = handler.hasNext();
         boolean expected = true;
         assertEquals("Has next returns false when there are more inspections", expected, result);
     }
 
+    public void hasNextFalse(){
+        while(handler.hasNext()){
+            handler.getNextInspection();
+        }
+        boolean result = handler.hasNext();
+        boolean expected = false;
+        assertEquals("Has next returns true when there are no more inspections", expected, result);
+    }
+
     @Test
     public void getNextInspection() throws Exception {
+        Inspection inspectionActual = handler.getNextInspection();
+        Inspection inspectionExpected = new Inspection (30, "Brakes", new VehicleDTO("ABC 123"));
+        boolean expected = true;
+        boolean result = false;
+        if (inspectionActual.equals(inspectionExpected)){
+            result = true;
+        }
+        assertEquals("The correct inspection is not fetched", expected, result);
     }
 
 }

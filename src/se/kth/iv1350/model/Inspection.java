@@ -40,6 +40,14 @@ public class Inspection {
         return false;
     }
 
+    @Override
+    public String toString(){
+       String inspectionStringRepresentation = "INSPECTION\n" + "Description: " + this.description + "\n" +
+               "Cost: " + this.cost + "\n" +
+               "Vehicle: " + this.vehicle.getRegNumber() + "\n" +
+               "Passed: " + this.passed + "\n";
+       return inspectionStringRepresentation;
+    }
     /**
      * Gets pass or fail result for a specific inspection
      * @return true if the inspection has passed, false if not

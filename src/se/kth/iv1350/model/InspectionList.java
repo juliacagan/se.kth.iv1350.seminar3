@@ -10,13 +10,21 @@ public class InspectionList {
     private int numberOfInspections;
 
     /**
-     * Set the inspection list
+     * Set the inspection list and initializes iterator
      * @param inspections an <code>Inspection</code> array
      */
     public void setInspections(Inspection[] inspections) {
         this.inspections = inspections;
         currentIndex = 0;
         numberOfInspections = inspections.length;
+    }
+
+    /**
+     * Updates the list without resetting the iterator
+     * @param inspections the updated list
+     */
+    public void updatesCurrentList(Inspection[] inspections){
+        this.inspections = inspections;
     }
 
     /**

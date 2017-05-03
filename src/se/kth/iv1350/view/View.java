@@ -3,6 +3,7 @@ package se.kth.iv1350.view;
 import java.util.*;
 import se.kth.iv1350.controller.Controller;
 import se.kth.iv1350.dto.CreditCardDTO;
+import se.kth.iv1350.dto.VehicleDTO;
 import se.kth.iv1350.model.Inspection;
 
 /**
@@ -25,14 +26,17 @@ public class View {
         Inspection inspection1 = controller.nextInspection();
         inspection1.setPassed(true);
         controller.enterInspectionResults(inspection1);
+        System.out.println(inspection1);
 
         Inspection inspection2 = controller.nextInspection();
         inspection2.setPassed(false);
         controller.enterInspectionResults(inspection2);
+        System.out.println(inspection2);
 
         Inspection inspection3 = controller.nextInspection();
         inspection3.setPassed(true);
         controller.enterInspectionResults(inspection3);
+        System.out.println(inspection3);
 
     }
 
@@ -44,14 +48,17 @@ public class View {
         Inspection inspection1 = controller.nextInspection();
         inspection1.setPassed(true);
         controller.enterInspectionResults(inspection1);
+        System.out.println(inspection1);
 
         Inspection inspection2 = controller.nextInspection();
         inspection2.setPassed(false);
         controller.enterInspectionResults(inspection2);
+        System.out.println(inspection2);
 
         Inspection inspection3 = controller.nextInspection();
         inspection3.setPassed(true);
         controller.enterInspectionResults(inspection3);
+        System.out.println(inspection3);
 
     }
 }

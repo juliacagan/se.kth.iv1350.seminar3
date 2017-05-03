@@ -42,7 +42,7 @@ public class InspectionHandler {
     }
 
     public void setInspectionList(Inspection[] inspections){
-        this.inspectionList.setInspections(inspections);
+        this.inspectionList.updatesCurrentList(inspections);
     }
 
     /**

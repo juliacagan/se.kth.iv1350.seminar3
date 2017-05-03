@@ -1,6 +1,7 @@
 package se.kth.iv1350.model;
 
 import se.kth.iv1350.dto.CreditCardDTO;
+import se.kth.iv1350.integration.Printer;
 
 import java.util.Date;
 
@@ -13,13 +14,14 @@ public class Payment {
     private double amountPaid;
     private double change;
     private Date dateOfTransaction;
+    private Receipt receipt;
 
     /**
      * Creates an instance of payment for a credit card payment
      * @param cost the cost of the total inspection
      * @param creditCard credit card information
      */
-    public Payment(int cost, CreditCardDTO creditCard) {
+    public Payment(double cost, CreditCardDTO creditCard) {
         this.cost = cost;
         this.creditCard = creditCard;
     }
@@ -29,24 +31,24 @@ public class Payment {
      * @param cost the cost of the total inspection
      * @param amountPaid the amount paid in cash by the customer
      */
-    public Payment(int cost, int amountPaid) {
+    public Payment(double cost, double amountPaid) {
         this.cost = cost;
         this.amountPaid = amountPaid;
     }
 
     /**
-     * Makes a credit card payment
+     * Makes a credit card payment and prints a receipt
      * @return returns true if the payment is authorized
      */
     public boolean makeCardPayment(){
         boolean paymentStatus = ExPayAuthSys.authorizePayment(this);
         dateOfTransaction = new Date();
-        Receipt receipt = new Receipt(this.dateOfTransaction, this.cost, this.creditCard);
+        receipt = new Receipt(this.dateOfTransaction, this.cost, this.creditCard);
         return paymentStatus;
     }
 
     /**
-     * Makes a cash payment
+     * Makes a cash payment and prints a receipt
      * @return the change to be given to customer
      */
     public double makeCashPayment(){
@@ -55,7 +57,18 @@ public class Payment {
         return change;
     }
 
+    /**
+     * prints a receipt
+     */
+    public void printReceipt(){
+        Printer.printReceipt(this.receipt);
+    }
+
     public Date getDateOfTransaction() {
         return dateOfTransaction;
+    }
+
+    public double getChange() {
+        return change;
     }
 }

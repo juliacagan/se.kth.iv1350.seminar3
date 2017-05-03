@@ -28,7 +28,7 @@ public class CarDataBaseHandler {
      */
     public Inspection[] getInspectionByVehicle(VehicleDTO vehicle){
         //Dummy implementation
-        return dataBaseInspections;
+        return this.dataBaseInspections;
     }
 
     /**

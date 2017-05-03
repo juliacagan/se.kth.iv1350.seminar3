@@ -8,7 +8,7 @@ import se.kth.iv1350.dto.VehicleDTO;
 public class Inspection {
 
     private VehicleDTO vehicle;
-    private int cost;
+    private double cost;
     private String description;
     private boolean passed;
 
@@ -29,7 +29,8 @@ public class Inspection {
         if (!(obj instanceof Inspection))
             return false;
         Inspection otherInspection = (Inspection) obj;
-        if (otherInspection.getCost() == this.cost && otherInspection.getDescription() == this.description)
+        if (otherInspection.getCost() == this.cost && otherInspection.getDescription().equalsIgnoreCase(description) &&
+                otherInspection.getVehicle().equals(this.vehicle))
             return true;
         return false;
     }
@@ -42,7 +43,7 @@ public class Inspection {
         this.passed = passed;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 

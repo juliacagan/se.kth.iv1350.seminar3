@@ -45,7 +45,7 @@ public class Receipt {
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("Car Inspection\n");
+        builder.append("***CAR INSPECTION RECEIPT***\n");
         builder.append("Date: " + this.dateOfTransaction + "\n");
         builder.append("Cost: " + cost + "\n");
         if (creditCard == null){

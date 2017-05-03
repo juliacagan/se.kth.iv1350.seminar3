@@ -49,4 +49,38 @@ public class CarDataBaseHandlerTest {
         assertEquals("Inspection that doesn't exist in the database is saved", expected, result);
     }
 
+    /*
+    new Inspection(30, "Brakes", new VehicleDTO("ABC 123")),
+                new Inspection(50, "Lights", new VehicleDTO("DEF 456")),
+                new Inspection(120, "Engine", new VehicleDTO("GHI 789"))};
+     */
+
+    @Test
+    public void testGetInspectionsByVehicle(){
+        Inspection[] inspections = dbhandler.getInspectionByVehicle(null);
+
+        boolean expected = true;
+        boolean calculated = inspections[0].equals(new Inspection (30, "Brakes", new VehicleDTO("ABC 123")));
+        assertEquals("The correct inspection isnt fetched", expected, calculated);
+
+
+        boolean expected2 = true;
+        boolean calculated2 = inspections[1].equals(new Inspection (50, "Lights", new VehicleDTO("DEF 456")));
+        assertEquals("The correct inspection isnt fetched", expected2, calculated2);
+
+
+        boolean expected3 = true;
+        boolean calculated3 = inspections[2].equals(new Inspection (120, "Engine", new VehicleDTO("GHI 789")));
+        assertEquals("The correct inspection isnt fetched", expected3, calculated3);
+
+
+        boolean expected4 = false;
+        boolean calculated4 = inspections[0].equals(new Inspection (120, "Engine", new VehicleDTO("GHI 789")));
+        assertEquals("The correct inspection isnt fetched", expected4, calculated4);
+
+
+
+
+    }
+
 }

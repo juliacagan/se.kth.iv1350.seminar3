@@ -23,35 +23,60 @@ public class InspectionHandlerTest {
                 new Inspection(30, "Brakes", new VehicleDTO("ABC 123")),
                 new Inspection(50, "Lights", new VehicleDTO( "DEF 456")),
                 new Inspection(120, "Engine", new VehicleDTO ("GHI 789"))};
-        inspectionList = new InspectionList(inspections);
-        handler = new InspectionHandler(inspectionList, dbhandler);
+        inspectionList = new InspectionList();
+        handler = new InspectionHandler(dbhandler);
+        handler.setInspectionList(inspections);
+
     }
 
     @After
     public void tearDown() throws Exception {
+        inspections = null;
+        inspectionList = null;
+        handler = null;
     }
 
     @Test
     public void calculateCost() throws Exception {
-        int resultCost = handler.calculateCost();
-        int expResultCost = 30 + 50 + 120;
-        assertEquals("Same costs are not equal.", expResultCost, resultCost);
+        double resultCost = handler.calculateCost();
+        System.out.println(resultCost);
+        double expResultCost = 30 + 50 + 120;
+        boolean expected = true;
+        boolean result = false;
+        if (resultCost == expResultCost){
+            result = true;
+        }
+        assertEquals("Same costs are not equal.", expected, result);
     }
 
     @Test
-    public void calculateCostNotEquals() {
-        int resultCost = handler.calculateCost();
-        int expResultCost = 0;
-        assertNotEquals("Different costs are equal.", expResultCost, resultCost);
+    public void calculateCostNotEqual() {
+        double resultCost = handler.calculateCost();
+        double expResultCost = 0;
+        boolean expected = true;
+        boolean result = false;
+        if (!(resultCost == expResultCost)){
+            result = true;
+        }
+        assertEquals("Different costs are equal.", expected, result);
     }
 
     @Test
     public void saveInspectionResult() throws Exception {
+        Inspection inspection = new Inspection (30, "Brakes", new VehicleDTO("ABC 123"));
+        inspection.setPassed(true);
+        dbhandler.saveInspectionResult(inspection);
+        boolean result = inspection.isPassed();
+        boolean expected = true;
+        assertEquals("Inspection result is not updated", expected, result);
 
     }
 
     @Test
-    public void hasNext() throws Exception {
+    public void testHasNext() throws Exception {
+        boolean result = inspectionList.hasNext();
+        boolean expected = true;
+        assertEquals("Has next returns false when there are more inspections", expected, result);
     }
 
     @Test

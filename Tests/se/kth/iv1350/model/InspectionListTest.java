@@ -26,7 +26,8 @@ public class InspectionListTest {
                 new Inspection(30, "Brakes", new VehicleDTO("ABC 123")),
                 new Inspection(50, "Lights", new VehicleDTO( "DEF 456")),
                 new Inspection(120, "Engine", new VehicleDTO ("GHI 789"))};
-        inspectionList = new InspectionList(inspections);
+        inspectionList = new InspectionList();
+        inspectionList.setInspections(inspections);
     }
 
     @After
@@ -50,6 +51,14 @@ public class InspectionListTest {
         boolean result = inspectionList.hasNext();
         boolean expResult = false;
         assertEquals("Method returns true even though there are no more inspections in the list.", expResult, result);
+    }
+
+    @Test
+    public void testGetNextInspection(){
+        boolean expected = true;
+        Inspection fetchedInspection = inspectionList.getNextInspection();
+        boolean calculated = fetchedInspection.equals(new Inspection(30, "Brakes", new VehicleDTO("ABC 123")));
+        assertEquals("fetched instruction is not equal to the first instruction in the database", expected, calculated);
     }
 
 }

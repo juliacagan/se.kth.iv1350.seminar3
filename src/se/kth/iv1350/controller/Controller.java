@@ -14,7 +14,7 @@ public class Controller {
     ExPayAuthSys exPayAuthSys;
     InspectionHandler inspectionHandler;
 
-    public Controller(Garage garage, CarDataBaseHandler dbhandler, ExPayAuthSys exPayAuthSys, InspectionHandler inspectionHandler) {
+    public Controller(Garage garage, CarDataBaseHandler dbhandler, InspectionHandler inspectionHandler) {
         this.garage = garage;
         this.dbhandler = dbhandler;
         this.exPayAuthSys = exPayAuthSys;
@@ -56,6 +56,7 @@ public class Controller {
     public double makeCashPayment(double cost, double amountPaid){
         Payment payment = new Payment(cost, amountPaid);
         double change = payment.makeCashPayment();
+        payment.printReceipt();
         return change;
 
     }

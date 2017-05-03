@@ -9,18 +9,11 @@ public class InspectionList {
     private int currentIndex;
     private int numberOfInspections;
 
-    /**
-     * Creates a new instance of InspectionList.
-     * @param inspections an array of inspections.
-     */
-    public InspectionList(Inspection[] inspections) {
-        this.inspections = inspections;
-        currentIndex = 0;
-        numberOfInspections = inspections.length;
-    }
 
     public void setInspections(Inspection[] inspections) {
         this.inspections = inspections;
+        currentIndex = 0;
+        numberOfInspections = inspections.length;
     }
 
     /**

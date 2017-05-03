@@ -24,6 +24,7 @@ public class Payment {
     public Payment(double cost, CreditCardDTO creditCard) {
         this.cost = cost;
         this.creditCard = creditCard;
+        this.dateOfTransaction = new Date();
     }
 
     /**
@@ -34,6 +35,7 @@ public class Payment {
     public Payment(double cost, double amountPaid) {
         this.cost = cost;
         this.amountPaid = amountPaid;
+        this.dateOfTransaction = new Date();
     }
 
     /**
@@ -52,8 +54,8 @@ public class Payment {
      * @return the change to be given to customer
      */
     public double makeCashPayment(){
-        change = cost - amountPaid;
-        Receipt receipt = new Receipt(this.dateOfTransaction, this.cost, this.amountPaid, this.change);
+        change = amountPaid - cost;
+        receipt = new Receipt(this.dateOfTransaction, this.cost, this.amountPaid, this.change);
         return change;
     }
 

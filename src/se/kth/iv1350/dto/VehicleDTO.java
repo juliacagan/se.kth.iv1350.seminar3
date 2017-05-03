@@ -19,7 +19,7 @@ public class VehicleDTO {
         if(!(obj instanceof VehicleDTO))
             return false;
         VehicleDTO vehicle = (VehicleDTO) obj;
-        if (this.regNumber.equals(vehicle.getRegNumber()))
+        if (this.regNumber.equalsIgnoreCase(vehicle.getRegNumber()))
             return true;
         return false;
     }

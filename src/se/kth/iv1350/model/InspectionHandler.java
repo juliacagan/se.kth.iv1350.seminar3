@@ -11,11 +11,10 @@ public class InspectionHandler {
 
     /**
      * Creates a new instance of InspectionHandler
-     * @param inspectionlist a list of inspections to be performed for a particular vehicle
-     * @param dbhandler an instance of the database handler
+     ** @param dbhandler an instance of the database handler
      */
-    public InspectionHandler(InspectionList inspectionlist, CarDataBaseHandler dbhandler) {
-        this.inspectionList = inspectionlist;
+    public InspectionHandler(CarDataBaseHandler dbhandler) {
+        this.inspectionList = new InspectionList();
         this.dbhandler = dbhandler;
     }
 
@@ -29,6 +28,7 @@ public class InspectionHandler {
         while(inspectionList.hasNext()){
             totalCost += inspectionList.getNextInspection().getCost();
         }
+        inspectionList.resetCurrentIndex();
         return totalCost;
     }
 
@@ -38,6 +38,7 @@ public class InspectionHandler {
      */
     public void saveInspectionResult (Inspection inspection){
         dbhandler.saveInspectionResult(inspection);
+        setInspectionList(dbhandler.getInspectionByVehicle(null));
     }
 
     public void setInspectionList(Inspection[] inspections){

@@ -13,7 +13,7 @@ public class InspectionTest {
     private Inspection other;
     private Inspection sameAsInstance;
     private String regNumber1 = "ABC 123";
-    private String regNumber2 = "DEF 456";
+    private String regNumber2 = "ABC 123";
     private VehicleDTO vehicle1 = new VehicleDTO(regNumber1);
     private VehicleDTO vehicle2 = new VehicleDTO(regNumber2);
 

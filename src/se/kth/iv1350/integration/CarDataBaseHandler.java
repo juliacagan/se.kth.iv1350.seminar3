@@ -17,8 +17,8 @@ public class CarDataBaseHandler {
     public CarDataBaseHandler() {
         dataBaseInspections = new Inspection[] {
                 new Inspection(30, "Brakes", new VehicleDTO("ABC 123")),
-                new Inspection(50, "Lights", new VehicleDTO("DEF 456")),
-                new Inspection(120, "Engine", new VehicleDTO("GHI 789"))};
+                new Inspection(50, "Lights", new VehicleDTO("ABC 123")),
+                new Inspection(120, "Engine", new VehicleDTO("ABC 123"))};
     }
 
     /**

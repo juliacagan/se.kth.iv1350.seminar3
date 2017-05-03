@@ -60,5 +60,8 @@ public class View {
         controller.enterInspectionResults(inspection3);
         System.out.println(inspection3);
 
+        controller.openDoor();
+        controller.closeDoor();
+
     }
 }

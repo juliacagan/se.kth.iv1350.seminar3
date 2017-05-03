@@ -65,17 +65,17 @@ public class CarDataBaseHandlerTest {
 
 
         boolean expected2 = true;
-        boolean calculated2 = inspections[1].equals(new Inspection (50, "Lights", new VehicleDTO("DEF 456")));
+        boolean calculated2 = inspections[1].equals(new Inspection (50, "Lights", new VehicleDTO("ABC 123")));
         assertEquals("The correct inspection isnt fetched", expected2, calculated2);
 
 
         boolean expected3 = true;
-        boolean calculated3 = inspections[2].equals(new Inspection (120, "Engine", new VehicleDTO("GHI 789")));
+        boolean calculated3 = inspections[2].equals(new Inspection (120, "Engine", new VehicleDTO("ABC 123")));
         assertEquals("The correct inspection isnt fetched", expected3, calculated3);
 
 
         boolean expected4 = false;
-        boolean calculated4 = inspections[0].equals(new Inspection (120, "Engine", new VehicleDTO("GHI 789")));
+        boolean calculated4 = inspections[0].equals(new Inspection (120, "Engine", new VehicleDTO("ABC 123")));
         assertEquals("The correct inspection isnt fetched", expected4, calculated4);
 
 

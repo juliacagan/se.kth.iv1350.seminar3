@@ -7,8 +7,12 @@ import se.kth.iv1350.dto.CreditCardDTO;
  */
 public class ExPayAuthSys {
 
-
-    public boolean authorizePayment(Payment payment){
+    /**
+     * A dummy implementation of an external authorization system
+     * @param payment an instance of <code>Payment</code>
+     * @return returns true if payment is authorized. This dummy implementation always returns true
+     */
+    public static boolean authorizePayment(Payment payment){
         return true;
     }
 }

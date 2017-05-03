@@ -6,6 +6,10 @@ package se.kth.iv1350.dto;
 public class VehicleDTO {
     String regNumber;
 
+    /**
+     * Creates a new instance of VehicleDTO
+     * @param regNumber the registration number for this particular vehicle
+     */
     public VehicleDTO(String regNumber) {
         this.regNumber = regNumber;
     }

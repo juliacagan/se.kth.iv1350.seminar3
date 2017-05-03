@@ -9,8 +9,8 @@ public class Receipt {
     private Date dateOfTransaction;
     private double cost;
     private CreditCardDTO creditCard;
-    private int amountPaid;
-    private int change;
+    private double amountPaid;
+    private double change;
 
     public Receipt(Date dateOfTransaction, double cost, CreditCardDTO creditCard) {
         this.dateOfTransaction = dateOfTransaction;
@@ -18,7 +18,7 @@ public class Receipt {
         this.creditCard = creditCard;
     }
 
-    public Receipt(Date dateOfTransaction, double cost, int amountPaid, int change) {
+    public Receipt(Date dateOfTransaction, double cost, double amountPaid, double change) {
         this.dateOfTransaction = dateOfTransaction;
         this.cost = cost;
         this.amountPaid = amountPaid;

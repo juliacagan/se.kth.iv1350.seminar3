@@ -13,11 +13,17 @@ public class Display {
         this.currentNumber = 0;
     }
 
+    /**
+     * Increments the current number on the display
+     */
     void displayNextNumber(){
         this.currentNumber++;
         display();
     }
 
+    /**
+     * A dummy implementation writing out the current display number to the standard output
+     */
     private void display(){
         System.out.println("Display: Updating display number: " + this.currentNumber);
     }

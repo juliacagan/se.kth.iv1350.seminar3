@@ -8,10 +8,10 @@ import java.util.Date;
  * Created by User on 2017-05-01.
  */
 public class Payment {
-    private int cost;
+    private double cost;
     private CreditCardDTO creditCard;
-    private int amountPaid;
-    private int change;
+    private double amountPaid;
+    private double change;
     private Date dateOfTransaction;
 
     /**
@@ -39,9 +39,9 @@ public class Payment {
      * @return returns true if the payment is authorized
      */
     public boolean makeCardPayment(){
-        ExPayAuthSys exPayAuthSys = new ExPayAuthSys();
-        boolean paymentStatus = exPayAuthSys.authorizePayment(this);
+        boolean paymentStatus = ExPayAuthSys.authorizePayment(this);
         dateOfTransaction = new Date();
+        Receipt receipt = new Receipt(this.dateOfTransaction, this.cost, this.creditCard);
         return paymentStatus;
     }
 
@@ -49,8 +49,9 @@ public class Payment {
      * Makes a cash payment
      * @return the change to be given to customer
      */
-    public int makeCashPayment(){
+    public double makeCashPayment(){
         change = cost - amountPaid;
+        Receipt receipt = new Receipt(this.dateOfTransaction, this.cost, this.amountPaid, this.change);
         return change;
     }
 

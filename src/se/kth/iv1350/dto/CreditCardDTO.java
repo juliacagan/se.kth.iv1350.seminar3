@@ -25,18 +25,34 @@ public class CreditCardDTO {
         this.expirationDate = expirationDate;
     }
 
+    /**
+     * Get card holder name
+     * @return name of the card holder
+     */
     public String getCardHolder() {
         return cardHolder;
     }
 
+    /**
+     * Get card number
+     * @return card number
+     */
     public String getCardNumber() {
         return cardNumber;
     }
 
+    /**
+     * Get cvc
+     * @return cvc number
+     */
     public String getCvc() {
         return cvc;
     }
 
+    /**
+     * Get expiration date
+     * @return expiration date
+     */
     public Date getExpirationDate() {
         return expirationDate;
     }

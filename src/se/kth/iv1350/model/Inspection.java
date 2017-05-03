@@ -24,6 +24,11 @@ public class Inspection {
         this.passed = false;
     }
 
+    /**
+     * Compares two inspections to see if they equal each other
+     * @param obj an instance of <code>Inspection</code>
+     * @return true if they are equal, false if not
+     */
    @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Inspection))
@@ -35,22 +40,42 @@ public class Inspection {
         return false;
     }
 
+    /**
+     * Gets pass or fail result for a specific inspection
+     * @return true if the inspection has passed, false if not
+     */
     public boolean isPassed() {
         return passed;
     }
 
+    /**
+     * Sets pass or fail result for a specific <code>Inspection</code>
+     * @param passed true if the inspection is passed, false if not
+     */
     public void setPassed(boolean passed) {
         this.passed = passed;
     }
 
+    /**
+     * Gets the cost for a specific inspection
+     * @return the cost
+     */
     public double getCost() {
         return cost;
     }
 
+    /**
+     * Gets the description for an inspection
+     * @return the description
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Get the vehicle
+     * @return the vehicle
+     */
     public VehicleDTO getVehicle() {
         return vehicle;
     }

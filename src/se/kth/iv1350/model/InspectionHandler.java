@@ -53,6 +53,10 @@ public class InspectionHandler {
         return inspectionList.hasNext();
     }
 
+    /**
+     * Fetches the next inspection on the list
+     * @return the next <code>Inspection</code>
+     */
     public Inspection getNextInspection(){
         return inspectionList.getNextInspection();
     }

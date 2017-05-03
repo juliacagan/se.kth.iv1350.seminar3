@@ -14,6 +14,12 @@ public class Controller {
     ExPayAuthSys exPayAuthSys;
     InspectionHandler inspectionHandler;
 
+    /**
+     * Creates an instance of controller
+     * @param garage reference to an instance of garage
+     * @param dbhandler reference to an instance of the database handler
+     * @param inspectionHandler reference to an instance of <code>InspectionHandler</code>
+     */
     public Controller(Garage garage, CarDataBaseHandler dbhandler, InspectionHandler inspectionHandler) {
         this.garage = garage;
         this.dbhandler = dbhandler;
@@ -21,14 +27,23 @@ public class Controller {
         this.inspectionHandler = inspectionHandler;
     }
 
+    /**
+     * Increments the display number and opens the garage door
+     */
     public void nextCustomer(){
         garage.nextCustomer();
     }
 
+    /**
+     * Opens the garage door
+     */
     public void openDoor(){
         garage.openDoor();
     }
 
+    /**
+     * Closes the garage door
+     */
     public void closeDoor(){
         garage.closeDoor();
     }
@@ -46,6 +61,12 @@ public class Controller {
         return cost;
     }
 
+    /**
+     * Makes a card payment
+     * @param cost  the total cost of the car inspection
+     * @param creditCard a <code>CreditCardDTO</code> containing credit card information
+     * @return return value is true if the payment is authorized
+     */
     public boolean makeCardPayment(double cost, CreditCardDTO creditCard){
         Payment payment = new Payment(cost, creditCard);
         boolean authorized = payment.makeCardPayment();
@@ -53,6 +74,12 @@ public class Controller {
         return authorized;
     }
 
+    /**
+     * Makes a cash payment and returns the change to be paid back to customer
+     * @param cost the total cost of the car inspection
+     * @param amountPaid amount paid in cash by the customer
+     * @return change to be paid back to the customer
+     */
     public double makeCashPayment(double cost, double amountPaid){
         Payment payment = new Payment(cost, amountPaid);
         double change = payment.makeCashPayment();
@@ -61,11 +88,18 @@ public class Controller {
 
     }
 
+    /**
+     * Fetches the next inspection in the <code>InspectionList</code>
+     * @return an instance of <code>Inspection</code>
+     */
     public Inspection nextInspection(){
         return inspectionHandler.getNextInspection();
-        //TODO null handling exception
     }
 
+    /**
+     * Saves pass or fail result for specified inspection
+     * @param inspection inspection to update the result for
+     */
     public void enterInspectionResults(Inspection inspection){
         inspectionHandler.saveInspectionResult(inspection);
 

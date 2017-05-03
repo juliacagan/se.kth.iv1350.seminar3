@@ -14,6 +14,11 @@ public class VehicleDTO {
         this.regNumber = regNumber;
     }
 
+    /**
+     * Compares two vehicles to see if they are equal
+     * @param obj vehicle to compare to this instance of the vehicle
+     * @return true if the vehicles are equal, false if not
+     */
     @Override
     public boolean equals(Object obj){
         if(!(obj instanceof VehicleDTO))
@@ -24,6 +29,10 @@ public class VehicleDTO {
         return false;
     }
 
+    /**
+     * Get registration number for this vehicle
+     * @return registration number
+     */
     public String getRegNumber() {
         return regNumber;
     }

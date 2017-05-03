@@ -9,7 +9,10 @@ public class InspectionList {
     private int currentIndex;
     private int numberOfInspections;
 
-
+    /**
+     * Set the inspection list
+     * @param inspections an <code>Inspection</code> array
+     */
     public void setInspections(Inspection[] inspections) {
         this.inspections = inspections;
         currentIndex = 0;

@@ -9,13 +9,13 @@ import static org.junit.Assert.*;
  * Created by User on 2017-05-01.
  */
 public class InspectionTest {
-    Inspection instance;
-    Inspection other;
-    Inspection sameAsInstance;
-    String regNumber1 = "ABC 123";
-    String regNumber2 = "DEF 456";
-    VehicleDTO vehicle1 = new VehicleDTO(regNumber1);
-    VehicleDTO vehicle2 = new VehicleDTO(regNumber2);
+    private Inspection instance;
+    private Inspection other;
+    private Inspection sameAsInstance;
+    private String regNumber1 = "ABC 123";
+    private String regNumber2 = "DEF 456";
+    private VehicleDTO vehicle1 = new VehicleDTO(regNumber1);
+    private VehicleDTO vehicle2 = new VehicleDTO(regNumber2);
 
     @Before
     public void setUp() throws Exception {

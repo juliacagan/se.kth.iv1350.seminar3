@@ -47,6 +47,7 @@ public class InspectionHandlerTest {
 
     @Test
     public void saveInspectionResult() throws Exception {
+
     }
 
     @Test

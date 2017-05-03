@@ -8,18 +8,17 @@ import se.kth.iv1350.model.Inspection;
  */
 public class CarDataBaseHandler {
 
-    Inspection[] dataBaseInspections;
+    private Inspection[] dataBaseInspections;
 
     /**
      * Creates an instance of CarDataBaseHandler, a dummy implementation of a data base of cars and their respective
      * instructions.
      */
     public CarDataBaseHandler() {
-        VehicleDTO vehicle = new VehicleDTO("dummyVehicle");
         dataBaseInspections = new Inspection[] {
-                new Inspection(30, "Brakes", vehicle),
-                new Inspection(50, "Lights", vehicle),
-                new Inspection(120, "Engine", vehicle)};
+                new Inspection(30, "Brakes", new VehicleDTO("ABC 123")),
+                new Inspection(50, "Lights", new VehicleDTO("DEF 456")),
+                new Inspection(120, "Engine", new VehicleDTO("GHI 789"))};
     }
 
     /**

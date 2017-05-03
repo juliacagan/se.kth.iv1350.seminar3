@@ -21,6 +21,7 @@ public class Inspection {
         this.cost = cost;
         this.description = description;
         this.vehicle = vehicle;
+        this.passed = false;
     }
 
    @Override
